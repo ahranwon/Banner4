@@ -3,7 +3,7 @@
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
 lib.ssMetadata = [
-		{name:"Banner_4_Won_final_atlas_", frames: [[418,182,416,188],[0,182,416,188],[1138,190,518,144],[1472,0,416,188],[324,372,322,89],[1658,190,322,89],[1548,336,408,180],[0,372,322,89],[1138,336,408,180],[0,0,1052,180],[1890,0,149,188],[1054,0,416,188],[836,190,300,250]]}
+		{name:"Banner_4_Won_final_atlas_", frames: [[1054,0,416,188],[418,182,416,188],[0,372,518,144],[0,182,416,188],[1462,372,322,89],[1138,190,408,180],[1138,372,322,89],[1548,190,408,180],[0,0,1052,180],[520,372,306,48],[1890,0,149,188],[1472,0,416,188],[836,190,300,250]]}
 ];
 
 
@@ -39,7 +39,7 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedTexturedBitmap_31 = function() {
+(lib.CachedTexturedBitmap_32 = function() {
 	this.initialize(ss["Banner_4_Won_final_atlas_"]);
 	this.gotoAndStop(4);
 }).prototype = p = new cjs.Sprite();
@@ -131,6 +131,19 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 }).prototype = getMCSymbolPrototype(lib.mc_simpleBryer, new cjs.Rectangle(0,-8.5,74.5,94), null);
 
 
+(lib.mc_PressShore = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// Layer_1
+	this.instance = new lib.CachedTexturedBitmap_37();
+	this.instance.parent = this;
+	this.instance.setTransform(0,0,0.5,0.5);
+
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+
+}).prototype = getMCSymbolPrototype(lib.mc_PressShore, new cjs.Rectangle(0,0,153,24), null);
+
+
 (lib.mc_photo = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
@@ -147,7 +160,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	this.initialize(mode,startPosition,loop,{});
 
 	// Layer_1
-	this.instance = new lib.CachedTexturedBitmap_37();
+	this.instance = new lib.CachedTexturedBitmap_36();
 	this.instance.parent = this;
 	this.instance.setTransform(0,0,0.5,0.5);
 
@@ -159,28 +172,31 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 (lib.buttonPressShore = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
-	// Layer_1
-	this.instance = new lib.CachedTexturedBitmap_31();
+	// buttonText
+	this.instance = new lib.mc_PressShore();
 	this.instance.parent = this;
-	this.instance.setTransform(21,22.2,0.5,0.5);
+	this.instance.setTransform(102.05,44.65,1,1,0,0,0,76.5,11.9);
 
-	this.instance_1 = new lib.CachedTexturedBitmap_34();
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(4));
+
+	// Layer_1
+	this.instance_1 = new lib.CachedTexturedBitmap_33();
 	this.instance_1.parent = this;
 	this.instance_1.setTransform(0,0,0.5,0.5);
 
-	this.instance_2 = new lib.CachedTexturedBitmap_33();
+	this.instance_2 = new lib.CachedTexturedBitmap_32();
 	this.instance_2.parent = this;
 	this.instance_2.setTransform(21,22.2,0.5,0.5);
 
-	this.instance_3 = new lib.CachedTexturedBitmap_35();
+	this.instance_3 = new lib.CachedTexturedBitmap_34();
 	this.instance_3.parent = this;
 	this.instance_3.setTransform(21,22.2,0.5,0.5);
 
-	this.instance_4 = new lib.CachedTexturedBitmap_36();
+	this.instance_4 = new lib.CachedTexturedBitmap_35();
 	this.instance_4.parent = this;
 	this.instance_4.setTransform(0,0,0.5,0.5);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1},{t:this.instance}]}).to({state:[{t:this.instance_1},{t:this.instance_2}]},1).to({state:[{t:this.instance_1},{t:this.instance_3}]},1).to({state:[{t:this.instance_4}]},1).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1}]}).to({state:[{t:this.instance_1},{t:this.instance_2}]},1).to({state:[{t:this.instance_1},{t:this.instance_3}]},1).to({state:[{t:this.instance_4}]},1).wait(1));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(0,0,204,90);
@@ -377,7 +393,7 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/Banner_4_Won_final_atlas_.png?1572897054555", id:"Banner_4_Won_final_atlas_"}
+		{src:"images/Banner_4_Won_final_atlas_.png", id:"Banner_4_Won_final_atlas_"}
 	],
 	preloads: []
 };
